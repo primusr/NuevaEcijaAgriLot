@@ -187,6 +187,31 @@
             margin-top: 10px;
         }
 
+
+        .gallery-grid {
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+
+        }
+
+        .gallery-grid img {
+
+            width: 100%;
+            border-radius: 10px;
+            transition: 0.4s;
+            cursor: pointer;
+
+        }
+
+        .gallery-grid img:hover {
+
+            transform: scale(1.05);
+
+        }
+
+
         /* MAP */
 
         .map iframe {
@@ -342,24 +367,21 @@
 
     </section>
 
+
+
     <section id="gallery" class="container">
 
-        <h2 class="section-title">Property Gallery</h2>
+        <h2 class="section-title">Aerial Property Views</h2>
 
-        <div class="gallery">
+        <div class="gallery-grid">
 
-            <img src="https://via.placeholder.com/1000x600" class="active">
-            <img src="https://via.placeholder.com/1000x600">
-            <img src="https://via.placeholder.com/1000x600">
-
-        </div>
-
-        <div class="gallery-controls">
-
-            <button onclick="prev()">Prev</button>
-            <button onclick="next()">Next</button>
+            <img src="images/drone1.jpg">
+            <img src="images/drone2.jpg">
+            <img src="images/drone3.jpg">
 
         </div>
+
+    </section>
 
     </section>
 
