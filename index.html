@@ -18,6 +18,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             background: #0b0f19;
@@ -25,33 +29,24 @@
             line-height: 1.6;
         }
 
-        section {
-            padding: 90px 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-        }
-
         /* NAVBAR */
 
         nav {
             position: fixed;
-            width: 100%;
             top: 0;
-            left: 0;
-            background: rgba(10, 10, 10, 0.6);
-            backdrop-filter: blur(10px);
-            padding: 15px 40px;
-            z-index: 1000;
+            width: 100%;
+            background: rgba(10, 10, 10, .6);
+            backdrop-filter: blur(12px);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 18px 40px;
+            z-index: 1000;
         }
 
         nav h3 {
             color: #d4af37;
+            font-weight: 600;
         }
 
         nav a {
@@ -68,7 +63,6 @@
         /* HERO */
 
         .hero {
-
             height: 100vh;
 
             background:
@@ -79,7 +73,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-
+            padding: 20px;
         }
 
         .hero h1 {
@@ -88,10 +82,10 @@
         }
 
         .hero p {
-            max-width: 700px;
+            max-width: 650px;
             margin: auto;
             opacity: .85;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
         .btn {
@@ -105,10 +99,19 @@
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .6);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .5);
         }
 
-        /* SECTION TITLE */
+        /* SECTIONS */
+
+        section {
+            padding: 90px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
 
         .section-title {
             text-align: center;
@@ -116,7 +119,7 @@
             margin-bottom: 50px;
         }
 
-        /* PROPERTY STATS */
+        /* STATS */
 
         .stats {
             display: grid;
@@ -126,10 +129,9 @@
         }
 
         .stat-box {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, .05);
             padding: 35px;
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, .05);
         }
 
         .stat-box h2 {
@@ -150,12 +152,11 @@
             padding: 30px;
             border-radius: 12px;
             transition: .3s;
-            border: 1px solid rgba(255, 255, 255, .05);
         }
 
         .feature:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, .07);
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, .08);
         }
 
         .feature h3 {
@@ -166,28 +167,24 @@
         /* GALLERY */
 
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
         }
 
         .gallery img {
             width: 100%;
             border-radius: 10px;
-            transition: .3s;
+            display: none;
         }
 
-        .gallery img:hover {
-            transform: scale(1.05);
+        .gallery img.active {
+            display: block;
         }
 
-        /* VIDEO */
-
-        .video-box {
+        .gallery-controls {
             text-align: center;
-            background: rgba(255, 255, 255, .04);
-            padding: 50px;
-            border-radius: 12px;
+            margin-top: 10px;
         }
 
         /* MAP */
@@ -195,8 +192,8 @@
         .map iframe {
             width: 100%;
             height: 400px;
-            border: none;
             border-radius: 10px;
+            border: none;
         }
 
         /* CONTACT */
@@ -213,13 +210,47 @@
             margin: auto;
         }
 
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* FLOAT BUTTONS */
+
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .float-btn {
+            padding: 14px 18px;
+            border-radius: 50px;
+            color: white;
+            font-size: 14px;
+        }
+
+        .whatsapp {
+            background: #25D366;
+        }
+
+        .messenger {
+            background: #0084FF;
+        }
+
         /* FOOTER */
 
         footer {
             text-align: center;
             padding: 30px;
             background: #02040a;
-            font-size: .9rem;
             opacity: .7;
         }
     </style>
@@ -234,6 +265,7 @@
 
         <div>
 
+            <a href="#overview">Overview</a>
             <a href="#features">Highlights</a>
             <a href="#gallery">Gallery</a>
             <a href="#map">Location</a>
@@ -251,7 +283,7 @@
 
             <p>
                 Strategically located along the Pangasinan–Nueva Ecija National Road.
-                Perfect for logistics hubs, commercial establishments, or agricultural investment.
+                Ideal for commercial, logistics, or agricultural development.
             </p>
 
             <a href="#contact" class="btn">Schedule Viewing</a>
@@ -260,30 +292,25 @@
 
     </section>
 
-    <section class="container">
+    <section id="overview" class="container">
 
         <h2 class="section-title">Property Overview</h2>
 
         <div class="stats">
 
             <div class="stat-box">
-                <h2>XX ha</h2>
-                <p>Total Lot Area</p>
+                <h2 id="lot">0</h2>
+                <p>Hectares</p>
             </div>
 
             <div class="stat-box">
-                <h2>XXX m</h2>
-                <p>Highway Frontage</p>
+                <h2 id="frontage">0</h2>
+                <p>Highway Frontage (m)</p>
             </div>
 
             <div class="stat-box">
                 <h2>National</h2>
                 <p>Highway Access</p>
-            </div>
-
-            <div class="stat-box">
-                <h2>Mixed-Use</h2>
-                <p>Zoning Potential</p>
             </div>
 
         </div>
@@ -298,19 +325,17 @@
 
             <div class="feature">
                 <h3>Highway Frontage</h3>
-                <p>Large frontage along a major national road allowing heavy vehicle access and excellent commercial
-                    visibility.</p>
+                <p>Massive national highway frontage ideal for commercial establishments.</p>
             </div>
 
             <div class="feature">
-                <h3>Water Access</h3>
-                <p>Natural water source along the rear boundary supporting irrigation and agricultural potential.</p>
+                <h3>Natural Water Source</h3>
+                <p>Rear boundary with irrigation water access.</p>
             </div>
 
             <div class="feature">
                 <h3>Development Ready</h3>
-                <p>Flat terrain suitable for gas stations, warehouses, logistics hubs, cold storage, or agri-industrial
-                    facilities.</p>
+                <p>Flat terrain suitable for warehouses, gas stations, logistics hubs.</p>
             </div>
 
         </div>
@@ -323,27 +348,16 @@
 
         <div class="gallery">
 
-            <img src="https://via.placeholder.com/800x500">
-            <img src="https://via.placeholder.com/800x500">
-            <img src="https://via.placeholder.com/800x500">
+            <img src="https://via.placeholder.com/1000x600" class="active">
+            <img src="https://via.placeholder.com/1000x600">
+            <img src="https://via.placeholder.com/1000x600">
 
         </div>
 
-    </section>
+        <div class="gallery-controls">
 
-    <section class="container">
-
-        <h2 class="section-title">Drone Tour</h2>
-
-        <div class="video-box">
-
-            <p>Explore the entire property through aerial drone footage.</p>
-
-            <br>
-
-            <a href="https://photos.app.goo.gl/WLbYuhBh4Rpug2VWA" target="_blank" class="btn">
-                Watch Video
-            </a>
+            <button onclick="prev()">Prev</button>
+            <button onclick="next()">Next</button>
 
         </div>
 
@@ -351,12 +365,11 @@
 
     <section id="map" class="container">
 
-        <h2 class="section-title">Property Location</h2>
+        <h2 class="section-title">Location</h2>
 
         <div class="map">
 
-            <iframe src="https://maps.google.com/maps?q=nueva%20ecija&t=&z=13&ie=UTF8&iwloc=&output=embed">
-            </iframe>
+            <iframe src="https://maps.google.com/maps?q=nueva%20ecija&t=&z=13&output=embed"></iframe>
 
         </div>
 
@@ -364,17 +377,18 @@
 
     <section id="contact" class="container contact">
 
-        <h2 class="section-title">Serious Inquiries</h2>
+        <h2 class="section-title">Request Information</h2>
 
         <div class="contact-card">
 
-            <p>Name: Your Name</p>
-            <p>Phone: Your Phone</p>
-            <p>Email: Your Email</p>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <input type="text" placeholder="Phone">
+            <textarea placeholder="Message"></textarea>
 
             <br>
 
-            <a class="btn" href="#">Request Documents</a>
+            <button class="btn">Send Inquiry</button>
 
         </div>
 
@@ -385,6 +399,64 @@
         © 2026 Prime Highway Property Listing
 
     </footer>
+
+    <div class="floating-buttons">
+
+        <a class="float-btn whatsapp" href="#">WhatsApp</a>
+        <a class="float-btn messenger" href="#">Messenger</a>
+
+    </div>
+
+    <script>
+
+        /* GALLERY */
+
+        let index = 0;
+        const images = document.querySelectorAll(".gallery img");
+
+        function show(i) {
+
+            images.forEach(img => img.classList.remove("active"));
+            images[i].classList.add("active");
+
+        }
+
+        function next() {
+
+            index = (index + 1) % images.length;
+            show(index);
+
+        }
+
+        function prev() {
+
+            index = (index - 1 + images.length) % images.length;
+            show(index);
+
+        }
+
+        /* COUNTER */
+
+        function animate(id, end) {
+
+            let start = 0;
+            let element = document.getElementById(id);
+
+            let interval = setInterval(() => {
+
+                start++;
+                element.innerText = start;
+
+                if (start >= end) clearInterval(interval);
+
+            }, 30);
+
+        }
+
+        animate("lot", 12);
+        animate("frontage", 450);
+
+    </script>
 
 </body>
 
