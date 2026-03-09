@@ -2,12 +2,9 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Prime Highway Property | Nueva Ecija</title>
-
+    <title>Prime Highway Property | Nueva Ecija Investment Opportunity</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
@@ -18,15 +15,15 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: 'Poppins', sans-serif;
-            background: #0b0f19;
+            background: #0a0d14;
             color: #e5e7eb;
             line-height: 1.6;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         /* NAVBAR */
@@ -35,18 +32,16 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 10, 10, .6);
-            backdrop-filter: blur(12px);
+            background: rgba(0, 0, 0, .6);
+            backdrop-filter: blur(10px);
+            padding: 18px 40px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 18px 40px;
             z-index: 1000;
         }
 
         nav h3 {
             color: #d4af37;
-            font-weight: 600;
         }
 
         nav a {
@@ -61,14 +56,11 @@
         }
 
         /* HERO */
-
         .hero {
             height: 100vh;
-
             background:
-                linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .9)),
+                linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .9)),
                 url("https://via.placeholder.com/1600x900?text=Drone+Property+Shot") center/cover;
-
             display: flex;
             align-items: center;
             justify-content: center;
@@ -78,7 +70,7 @@
 
         .hero h1 {
             font-size: 4rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .hero p {
@@ -99,7 +91,6 @@
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .5);
         }
 
         /* SECTIONS */
@@ -119,7 +110,7 @@
             margin-bottom: 50px;
         }
 
-        /* STATS */
+        /* INVESTOR STATS */
 
         .stats {
             display: grid;
@@ -136,10 +127,9 @@
 
         .stat-box h2 {
             color: #d4af37;
-            font-size: 2rem;
         }
 
-        /* FEATURES */
+        /* HIGHLIGHTS */
 
         .features {
             display: grid;
@@ -148,14 +138,14 @@
         }
 
         .feature {
-            background: rgba(255, 255, 255, .04);
+            background: rgba(255, 255, 255, .05);
             padding: 30px;
             border-radius: 12px;
             transition: .3s;
         }
 
         .feature:hover {
-            transform: translateY(-6px);
+            transform: translateY(-5px);
             background: rgba(255, 255, 255, .08);
         }
 
@@ -164,68 +154,68 @@
             margin-bottom: 10px;
         }
 
-        /* GALLERY */
+        /* SLIDER */
 
-        .gallery {
+        .slider {
             position: relative;
             max-width: 1000px;
             margin: auto;
-        }
-
-        .gallery img {
-            width: 100%;
+            overflow: hidden;
             border-radius: 10px;
-            display: none;
         }
 
-        .gallery img.active {
-            display: block;
+        .slides {
+            display: flex;
+            transition: transform .6s ease;
         }
 
-        .gallery-controls {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-
-        .gallery-grid {
-
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
-
-        }
-
-        .gallery-grid img {
-
+        .slides img {
             width: 100%;
-            border-radius: 10px;
-            transition: 0.4s;
-            cursor: pointer;
-
         }
-
-        .gallery-grid img:hover {
-
-            transform: scale(1.05);
-
-        }
-
 
         /* MAP */
 
         .map iframe {
             width: 100%;
-            height: 400px;
-            border-radius: 10px;
+            height: 420px;
             border: none;
+            border-radius: 10px;
+        }
+
+
+        .gallery-grid{
+
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+            gap:20px;
+
+            }
+
+        .gallery-grid img{
+
+            width:100%;
+            border-radius:10px;
+            transition:0.4s;
+            cursor:pointer;
+
+            }
+
+        .gallery-grid img:hover{
+
+            transform:scale(1.05);
+
+            }
+
+        /* INVESTMENT */
+
+        .investment {
+            background: rgba(255, 255, 255, .03);
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
         }
 
         /* CONTACT */
-
-        .contact {
-            text-align: center;
-        }
 
         .contact-card {
             background: rgba(255, 255, 255, .05);
@@ -233,41 +223,7 @@
             border-radius: 12px;
             max-width: 500px;
             margin: auto;
-        }
-
-        input,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-        }
-
-        /* FLOAT BUTTONS */
-
-        .floating-buttons {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .float-btn {
-            padding: 14px 18px;
-            border-radius: 50px;
-            color: white;
-            font-size: 14px;
-        }
-
-        .whatsapp {
-            background: #25D366;
-        }
-
-        .messenger {
-            background: #0084FF;
+            text-align: center;
         }
 
         /* FOOTER */
@@ -278,6 +234,27 @@
             background: #02040a;
             opacity: .7;
         }
+
+        /* FLOAT BUTTON */
+
+        .whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+        }
+
+        .map-box iframe{
+
+            width:100%;
+            height:420px;
+            border:none;
+            border-radius:10px;
+
+         }
     </style>
 
 </head>
@@ -291,9 +268,8 @@
         <div>
 
             <a href="#overview">Overview</a>
-            <a href="#features">Highlights</a>
             <a href="#gallery">Gallery</a>
-            <a href="#map">Location</a>
+            <a href="#location">Location</a>
             <a href="#contact">Contact</a>
 
         </div>
@@ -304,14 +280,14 @@
 
         <div>
 
-            <h1>Prime Highway Property</h1>
+            <h1>Prime Highway Investment Property</h1>
 
             <p>
-                Strategically located along the Pangasinan–Nueva Ecija National Road.
-                Ideal for commercial, logistics, or agricultural development.
+                Strategically located along the Pangasinan–Nueva Ecija National Highway.
+                Perfect for logistics hubs, fuel stations, agri-industrial developments, and warehouses.
             </p>
 
-            <a href="#contact" class="btn">Schedule Viewing</a>
+            <a href="#contact" class="btn">Request Information</a>
 
         </div>
 
@@ -319,98 +295,123 @@
 
     <section id="overview" class="container">
 
-        <h2 class="section-title">Property Overview</h2>
+        <h2 class="section-title">Investment Overview</h2>
 
         <div class="stats">
 
             <div class="stat-box">
-                <h2 id="lot">0</h2>
-                <p>Hectares</p>
+                <h2>XX Hectares</h2>
+                <p>Total Land Area</p>
             </div>
 
             <div class="stat-box">
-                <h2 id="frontage">0</h2>
-                <p>Highway Frontage (m)</p>
+                <h2>XXX meters</h2>
+                <p>Highway Frontage</p>
             </div>
 
             <div class="stat-box">
-                <h2>National</h2>
-                <p>Highway Access</p>
+                <h2>Mixed Use</h2>
+                <p>Development Potential</p>
+            </div>
+
+            <div class="stat-box">
+                <h2>National Road</h2>
+                <p>Direct Highway Access</p>
             </div>
 
         </div>
 
     </section>
 
-    <section id="features" class="container">
+    <section class="container">
 
         <h2 class="section-title">Property Highlights</h2>
 
         <div class="features">
 
             <div class="feature">
-                <h3>Highway Frontage</h3>
-                <p>Massive national highway frontage ideal for commercial establishments.</p>
+                <h3>High Visibility</h3>
+                <p>Major highway frontage ideal for commercial establishments.</p>
             </div>
 
             <div class="feature">
-                <h3>Natural Water Source</h3>
-                <p>Rear boundary with irrigation water access.</p>
+                <h3>Water Access</h3>
+                <p>Natural water source suitable for agricultural irrigation.</p>
             </div>
 
             <div class="feature">
-                <h3>Development Ready</h3>
-                <p>Flat terrain suitable for warehouses, gas stations, logistics hubs.</p>
+                <h3>Flat Terrain</h3>
+                <p>Ready for warehouses, logistics hubs, or agri-industrial use.</p>
             </div>
 
         </div>
 
     </section>
 
+<section id="gallery" class="container">
 
+    <h2 class="section-title">Aerial Property Views</h2>
 
-    <section id="gallery" class="container">
+    <div class="gallery-grid">
 
-        <h2 class="section-title">Aerial Property Views</h2>
+        <img src="images/drone1.jpg">
+        <img src="images/drone2.jpg">
+        <img src="images/drone3.jpg">
 
-        <div class="gallery-grid">
+    </div>
 
-            <img src="images/drone1.jpg">
-            <img src="images/drone2.jpg">
-            <img src="images/drone3.jpg">
+</section>
 
-        </div>
+<section id="location" class="container">
 
-    </section>
+    <h2 class="section-title">Strategic Location</h2>
 
-    </section>
+    <div class="map-box">
 
-    <section id="map" class="container">
+        <iframe src="https://maps.google.com/maps?q=15.8269,120.8783&t=k&z=15&output=embed">
+        </iframe>
 
-        <h2 class="section-title">Location</h2>
+    </div>
 
-        <div class="map">
+</section>
 
-            <iframe src="https://maps.google.com/maps?q=nueva%20ecija&t=&z=13&output=embed"></iframe>
+    <section class="container">
 
-        </div>
+        <h2 class="section-title">Investment Potential</h2>
 
-    </section>
+        <div class="investment">
 
-    <section id="contact" class="container contact">
+            <p>
 
-        <h2 class="section-title">Request Information</h2>
+                This property offers exceptional value for investors seeking strategic highway frontage in Central
+                Luzon.
+                Its location between Pangasinan and Nueva Ecija makes it ideal for logistics hubs, gas stations, cold
+                storage,
+                and agri-industrial facilities.
 
-        <div class="contact-card">
-
-            <input type="text" placeholder="Name">
-            <input type="email" placeholder="Email">
-            <input type="text" placeholder="Phone">
-            <textarea placeholder="Message"></textarea>
+            </p>
 
             <br>
 
-            <button class="btn">Send Inquiry</button>
+            <a class="btn" href="#">Download Property Brochure</a>
+
+        </div>
+
+    </section>
+
+    <section id="contact" class="container">
+
+        <h2 class="section-title">Serious Inquiries</h2>
+
+        <div class="contact-card">
+
+            <p><b>Name:</b> Your Name</p>
+            <p><b>Phone:</b> Your Phone</p>
+            <p><b>Email:</b> Your Email</p>
+
+            <br>
+
+            <a class="btn">Schedule Site Viewing</a>
 
         </div>
 
@@ -422,61 +423,24 @@
 
     </footer>
 
-    <div class="floating-buttons">
-
-        <a class="float-btn whatsapp" href="#">WhatsApp</a>
-        <a class="float-btn messenger" href="#">Messenger</a>
-
-    </div>
+    <a class="whatsapp" href="#">WhatsApp Inquiry</a>
 
     <script>
 
-        /* GALLERY */
+        /* AUTO SLIDER */
 
-        let index = 0;
-        const images = document.querySelectorAll(".gallery img");
+        let slideIndex = 0;
+        const slides = document.querySelector(".slides");
+        const total = document.querySelectorAll(".slides img").length;
 
-        function show(i) {
+        setInterval(() => {
 
-            images.forEach(img => img.classList.remove("active"));
-            images[i].classList.add("active");
+            slideIndex++;
+            if (slideIndex >= total) slideIndex = 0;
 
-        }
+            slides.style.transform = "translateX(-" + slideIndex * 100 + "%)";
 
-        function next() {
-
-            index = (index + 1) % images.length;
-            show(index);
-
-        }
-
-        function prev() {
-
-            index = (index - 1 + images.length) % images.length;
-            show(index);
-
-        }
-
-        /* COUNTER */
-
-        function animate(id, end) {
-
-            let start = 0;
-            let element = document.getElementById(id);
-
-            let interval = setInterval(() => {
-
-                start++;
-                element.innerText = start;
-
-                if (start >= end) clearInterval(interval);
-
-            }, 30);
-
-        }
-
-        animate("lot", 12);
-        animate("frontage", 450);
+        }, 4000);
 
     </script>
 
